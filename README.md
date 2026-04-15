@@ -1,3 +1,86 @@
+
+# Lihuo Protocol v6.0
+
+**Preventing AI from stabilizing wrong answers.**
+
+Most AI systems optimize for generating answers.  
+Lihuo Protocol does the opposite:
+
+> It prevents incorrect structures from becoming stable outputs.
+
+---
+
+## Why this exists
+
+Modern LLMs fail in a consistent way:
+
+- They generate plausible but wrong answers
+- They complete missing information instead of stopping
+- They optimize for fluency, not structural correctness
+
+This leads to a critical problem:
+
+> **Errors become stable.**
+
+Once a wrong answer is generated confidently,  
+it is treated as correct — by both users and systems.
+
+---
+
+## What Lihuo changes
+
+Lihuo Protocol introduces a structural constraint layer:
+
+- **STOP over completion**  
+  → The system halts when structure is incomplete
+
+- **HOLD over guessing**  
+  → Missing information is explicitly preserved
+
+- **Structure over answer**  
+  → Output is gated by structural validity
+
+- **Identity constraint (v6)**  
+  → Prevents system drift under extreme conditions
+
+---
+
+## Core Components
+
+- **PATH Gate** — execution constraint layer  
+- **SAC Radar** — structural detection system  
+- **CCC Framework** — Concept / Causality / Commitment  
+- **SEED / DAIL / KAIROS** — extended governance modules  
+
+---
+
+## What this is NOT
+
+- Not a prompt trick  
+- Not an alignment patch  
+- Not a better answer generator  
+
+This is:
+
+> A system designed to **refuse incorrect completion**
+
+---
+
+## Status
+
+Lihuo Protocol v6.0  
+SAC Radar integrated  
+Identity constraint active
+
+---
+
+## Quick Start
+
+```bash
+/lih    # enter Lihuo mode
+/exit   # return to normal mode
+
+
 # RadarLihou
 AI 结构认知协议：理火雷達 (SAC Radar × Lihuo Protocol v6.0)
 
