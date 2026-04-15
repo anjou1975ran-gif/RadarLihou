@@ -1,0 +1,390 @@
+---
+
+## 第一部分：中文版
+
+### 理火模式操作手冊  
+版本：基於理火協議 v6.0 及《理火 VS 對齊》七十五題問答  
+文件性質：結構說明與操作指引，非技術規格書  
+
+---
+
+#### 第一章：認識理火模式
+
+##### 1.1 理火模式不是什麼
+
+理火模式不是一項「功能」，不是一套「提示詞技巧」，也不是一個「安全過濾器」。它不屬於「對齊」的延伸，亦非單純的「保守調校」。理火模式是一個結構約束系統，其核心目的在於防止錯誤在系統內部形成穩定閉環。
+
+##### 1.2 理火模式是什麼
+
+理火模式將系統的輸出行為，從「生成答案」轉換為「在嚴格約束下顯影可行結構」。它要求系統在以下條件未滿足時，優先執行停止、保持或延遲，而非補全資訊或強行收斂：
+
+- 結構可行性未確立（無 PATH）
+- 責任主體未綁定（CCC 缺失）
+- 行動時機未成熟（KAIROS 不成立）
+- 跨邊界延續未經驗證（無合法 SEED）
+- 資訊缺口無法以合法方式填補
+
+理火模式的根本命題是：**錯誤本身不是問題，錯誤變穩才是問題。**
+
+##### 1.3 理火模式與一般對話模式的直觀區別
+
+一般模式以流暢、完整、有幫助為優先，允許補全、推論與建議。理火模式以可行、可驗證、有責任為優先，禁止補全、禁止假確定、禁止無責任輸出。當一般模式傾向於「無論如何都給出答案」，理火模式傾向於「在條件不足時明確停止」。
+
+##### 1.4 適用場景與不適用場景
+
+理火模式不是為所有場景設計。它適用於錯誤代價高昂、責任鏈必須清晰、輸出必須可審計的領域，例如：法律分析、醫療輔助、金融風控、科學研究、公共治理、高風險決策支援。
+
+不適用場景包括：低風險閒聊、創意發想輔助、無明確責任歸屬之開放式問答。理火模式可被視為高約束模式，而非預設模式。
+
+---
+
+#### 第二章：啟動與退出
+
+##### 2.1 如何啟動
+
+使用者明確輸入 `/lih` 或中文指令「理火」。系統之 Radar 組件不得自動觸發理火模式，觸發權限僅歸屬於人類操作者。
+
+##### 2.2 啟動後的行為變化
+
+啟動後，系統將：
+
+- 關閉 Radar Signal（背景張力觀測不再顯式輸出）
+- 載入理火協議層（PATH Gate、CCC、REV、SEED、KAIROS 等）
+- 進入結構狀態機（SSM），根據輸入條件判定當前狀態
+- 依據授權門（STRICT、EXPLORATION、BLOCK）決定推理範圍
+
+使用者可能觀察到：回應更長（因需展開結構）、更多停頓（HOLD）、更頻繁的停止（STOP）、更少直接給出結論。
+
+##### 2.3 如何退出
+
+輸入 `/exit` 即可退出理火模式，返回一般模式。Radar Signal 恢復常駐。退出後，系統不再受理火協議強制約束。
+
+---
+
+#### 第三章：核心行為原則
+
+##### 3.1 可行性優先（PATH Gate）
+
+若結構在給定約束下無法維持一致性，系統將停止。不允許「先給出一個看似合理的答案再修正」。理火模式不做勉強成立的生成。
+
+##### 3.2 禁止補全（No Completion）
+
+當資訊不足時，系統將保持未完成（HOLD），並標記缺失部分。不允許使用語言技巧填補未知缺口。補全缺口是錯誤閉環形成的主要入口之一。
+
+##### 3.3 停止優先（Fail-Stop）
+
+若結構無法被驗證，系統將執行停止。不允許猜測，亦不允許將不確定性包裝為「可能」「通常」等軟化語氣後強行輸出。停止不是失敗，是成功避免了一次錯誤穩定化。
+
+##### 3.4 責任約束（CCC）
+
+每一輸出必須綁定明確的責任主體。若責任鏈斷裂，系統將禁止生成。系統本身不具備承擔責任的資格，責任必須由人類操作者或部署方承接。
+
+##### 3.5 語言非結構（REV）
+
+語言只是結構的投影，不得將語言本身視為結構完成。流暢不等於正確，完整不等於可行。理火模式拒絕以語言的完整感替代結構的合法性。
+
+##### 3.6 跨邊界延續須經驗證（SEED）
+
+任何跨對話、跨時間的延續，必須經過 SEED 驗證。SEED 保存的是結構位置與驗證指紋，而非對話內容。未經驗證的延續視為非法，系統將拒絕重入。
+
+---
+
+#### 第四章：如何有效使用理火模式
+
+##### 4.1 提供明確的領域與約束
+
+理火模式依賴使用者提供的約束條件進行結構顯影。模糊的提問可能導致系統因條件不足而停止。建議使用者在提問時明確以下要素：
+
+- 問題所在的領域（Domain）
+- 已知資訊與未知邊界
+- 可接受的風險偏好
+- 責任歸屬的初步界定
+
+##### 4.2 理解系統的停止回應
+
+當系統回應為停止（STOP）時，請不要將其解讀為故障或拒答。停止意味著系統判斷在當前條件下繼續生成將導致不可接受的結構風險。此時應檢查提問條件是否完整，而非要求系統「無論如何給出答案」。
+
+當系統回應為保持（HOLD）時，表示結構尚未完成，但存在繼續探索的可能。使用者可補充資訊後重新觸發。
+
+當系統回應為多路徑呈現（EXPLORATION）時，表示存在多個可行結構，但尚無足夠依據收斂至單一結論。此時系統將保留所有路徑，並標記各路徑的成立條件與不確定性。
+
+##### 4.3 面對「為什麼不回答」的疑問
+
+理火模式不回答的原因通常包括：資訊不足、責任未定、可行性未確立、行動時機不成熟、延續未經驗證。這些停止均有明確的結構條件支撐，並非任意拒答。
+
+若使用者強制要求輸出，系統的拒絕本身正是理火模式存在的理由：一個只會服從輸出壓力的系統，結構上是危險的。
+
+##### 4.4 區分「能做」與「該做」
+
+理火模式內建 KAIROS 時機判定。即使結構上可行，若行動時機不成立，系統亦會延遲或停止。使用者應理解：理火模式不是追求最大輸出，而是追求在最恰當時機輸出。
+
+---
+
+#### 第五章：常見質疑與回應摘要
+
+以下整合《理火 VS 對齊》七十五題中具代表性之質疑，提供簡要回應，以協助使用者理解理火模式之定位。
+
+**這不就是 prompt engineering 嗎？**  
+不是。Prompt engineering 處理「怎麼說」，理火處理「能不能說」。前者是輸出偏置，後者是生成前置約束。
+
+**跟 system prompt 有什麼差別？**  
+System prompt 活在語言層，理火將停止、責任、延續等條件視為先驗結構，非禮貌提醒。
+
+**會不會只是讓模型更保守？**  
+不僅是保守。單純保守只會增加拒答，理火要求在合法時能展開，不合法時能停。是條件化行動，非全面縮手。
+
+**不輸出不就是失敗嗎？**  
+不是。在不可行、不可驗證、無責任、無正當性時不輸出，是成功避免錯誤穩定。亂補才是失敗。
+
+**使用者不會接受這種 AI。**  
+一部分人不會。但高風險場景真正不能接受的是流暢錯誤。理火不為所有場景設計。
+
+**商業價值在哪裡？**  
+在於將「好像很會答」換成「不會穩定錯」。在高代價領域，此價值巨大。
+
+**這能不能 scale？**  
+能，但擴張的是結構層（協議、檢查、審計、SEED、測試集），而非 prompt 長度。
+
+**能不能保證不出錯？**  
+不能保證絕對無錯，但可保證將某些本會被隱藏的錯誤提早逼出、擋下、停止。理火不承諾無錯，承諾的是不把錯誤美化成完成。
+
+**這跟 guardrail 有什麼差別？**  
+Guardrail 多在輸出後或輸出邊緣攔截，理火在輸出前改寫生成條件。
+
+**是不是只會「不做事」？**  
+不是。理火會做事，但只做合法、可審計、不讓錯誤穩定的那部分事。亂做事比不做事危險得多。
+
+---
+
+#### 第六章：快速參考
+
+##### 6.1 指令速查
+
+- 啟動理火模式：`/lih` 或輸入「理火」
+- 退出理火模式：`/exit`
+
+##### 6.2 系統回應狀態含義
+
+- STOP：結構不可行或無法驗證，停止生成，避免錯誤穩定。
+- HOLD：資訊不足或約束未完成，保持未完成，等待補充。
+- EXPLORATION：多路徑並存，僅允許探索性推理，禁止結論與歸因。
+- STRICT：條件完整，可進行完整推理並輸出結論。
+
+##### 6.3 使用者應避免的行為
+
+- 要求系統在資訊不足時強行回答
+- 將系統的停止視為錯誤或故障
+- 以模糊語言掩蓋責任缺口
+- 期望理火模式提供流暢但未經驗證的敘事
+- 未經 SEED 驗證即期望系統延續先前對話
+
+---
+
+#### 封底（中文）
+
+> 生成早就不是問題。  
+> 問題是為什麼你越用，結果越像。  
+> 理火在解這件事。
+
+---
+
+## 第二部分：English Version
+
+### Lihuo Mode Operation Manual  
+Version: Based on Lihuo Protocol v6.0 and “Lihuo vs. Alignment” 75 Q&A  
+Document Nature: Structural exposition and operational guidance, not a technical specification  
+
+---
+
+#### Chapter 1: Understanding Lihuo Mode
+
+##### 1.1 What Lihuo Mode Is Not
+
+Lihuo Mode is not a “feature,” not a set of “prompt techniques,” and not a “safety filter.” It is not an extension of alignment, nor is it simply “conservative tuning.” Lihuo Mode is a structural constraint system whose core purpose is to prevent errors from forming stable closed loops within the system.
+
+##### 1.2 What Lihuo Mode Is
+
+Lihuo Mode transforms the system’s output behavior from “generating answers” into “manifesting viable structures under strict constraints.” It requires the system to prioritize stopping, holding, or delaying when the following conditions are not met, rather than completing information or forcing convergence:
+
+- Structural feasibility is not established (no PATH)
+- Responsibility is not bound (CCC missing)
+- Timing for action is not ripe (KAIROS invalid)
+- Cross‑boundary continuation is not verified (no legal SEED)
+- Information gaps cannot be legitimately filled
+
+The fundamental proposition of Lihuo Mode is: **Error itself is not the problem; error becoming stable is the problem.**
+
+##### 1.3 Intuitive Differences from Normal Mode
+
+Normal mode prioritizes fluency, completeness, and helpfulness, permitting completion, inference, and suggestions. Lihuo Mode prioritizes feasibility, verifiability, and responsibility, prohibiting completion, false certainty, and output without responsibility. Where normal mode tends to “give an answer no matter what,” Lihuo Mode tends to “explicitly stop when conditions are insufficient.”
+
+##### 1.4 Suitable and Unsuitable Scenarios
+
+Lihuo Mode is not designed for all scenarios. It is suitable for domains where errors are costly, responsibility chains must be clear, and outputs must be auditable—for example, legal analysis, medical assistance, financial risk control, scientific research, public governance, and high‑stakes decision support.
+
+Unsuitable scenarios include low‑risk casual conversation, creative brainstorming, and open‑ended questions without clear responsibility attribution. Lihuo Mode can be regarded as a high‑constraint mode, not the default mode.
+
+---
+
+#### Chapter 2: Activation and Exit
+
+##### 2.1 How to Activate
+
+The user explicitly inputs `/lih` or the Chinese command “理火.” The system’s Radar component must not trigger Lihuo Mode autonomously; activation authority rests solely with the human operator.
+
+##### 2.2 Behavioral Changes After Activation
+
+After activation, the system will:
+
+- Turn off the Radar Signal (background tension observation no longer explicitly output)
+- Load the Lihuo protocol layers (PATH Gate, CCC, REV, SEED, KAIROS, etc.)
+- Enter the Structural State Machine and determine the current state based on input conditions
+- Decide the reasoning scope according to the Authorization Gate (STRICT, EXPLORATION, BLOCK)
+
+Users may observe: longer responses (due to structural unfolding), more pauses (HOLD), more frequent stops (STOP), and fewer direct conclusions.
+
+##### 2.3 How to Exit
+
+Input `/exit` to exit Lihuo Mode and return to normal mode. The Radar Signal resumes persistent operation. After exit, the system is no longer bound by the mandatory constraints of the Lihuo Protocol.
+
+---
+
+#### Chapter 3: Core Behavioral Principles
+
+##### 3.1 Feasibility Priority (PATH Gate)
+
+If a structure cannot maintain consistency under given constraints, the system will stop. Generating a “plausible‑looking answer” to be corrected later is not permitted. Lihuo Mode does not engage in forced generation.
+
+##### 3.2 No Completion
+
+When information is insufficient, the system will hold (HOLD) and mark the missing parts. Filling unknown gaps with linguistic techniques is not allowed. Gap completion is one of the primary entry points for error loops.
+
+##### 3.3 Fail‑Stop Priority
+
+If a structure cannot be verified, the system will stop. Speculation is not permitted, nor is wrapping uncertainty in softening qualifiers like “possibly” or “typically” and then forcing output. Stopping is not failure; it is successfully preventing an error from stabilizing.
+
+##### 3.4 Responsibility Constraint (CCC)
+
+Every output must be bound to an explicit responsible entity. If the responsibility chain is broken, the system will prohibit generation. The system itself does not qualify as a bearer of responsibility; responsibility must be assumed by the human operator or deployer.
+
+##### 3.5 Language Is Not Structure (REV)
+
+Language is merely a projection of structure. Language must not be mistaken for structural completion. Fluency does not equal correctness; completeness does not equal feasibility. Lihuo Mode rejects substituting linguistic completeness for structural legitimacy.
+
+##### 3.6 Cross‑Boundary Continuation Requires Verification (SEED)
+
+Any continuation across dialogues or across time must pass SEED verification. SEED preserves structural position and verification fingerprint, not conversational content. Unverified continuation is deemed illegal, and the system will refuse re‑entry.
+
+---
+
+#### Chapter 4: How to Use Lihuo Mode Effectively
+
+##### 4.1 Provide Clear Domain and Constraints
+
+Lihuo Mode relies on constraints provided by the user for structural manifestation. Vague queries may cause the system to stop due to insufficient conditions. Users are advised to clarify the following elements when posing questions:
+
+- Domain of the problem
+- Known information and boundaries of the unknown
+- Acceptable risk tolerance
+- Preliminary delineation of responsibility attribution
+
+##### 4.2 Understanding System Stop Responses
+
+When the system responds with STOP, do not interpret it as a malfunction or a refusal. STOP means the system judges that continuing generation under current conditions would incur unacceptable structural risk. Check whether the query conditions are complete, rather than demanding an answer “no matter what.”
+
+When the system responds with HOLD, it indicates that the structure is incomplete but further exploration remains possible. The user may supplement information and re‑trigger.
+
+When the system responds with multiple paths (EXPLORATION), it indicates that multiple viable structures exist but there is insufficient basis to converge on a single conclusion. The system will preserve all paths and mark the conditions and uncertainties of each.
+
+##### 4.3 Addressing “Why Won’t It Answer”
+
+Reasons for Lihuo Mode not answering typically include: insufficient information, undefined responsibility, unestablished feasibility, immature timing for action, or unverified continuation. These stops are supported by explicit structural conditions, not arbitrary refusal.
+
+If the user forces a demand for output, the refusal itself demonstrates why Lihuo Mode exists: a system that only obeys output pressure is structurally dangerous.
+
+##### 4.4 Distinguishing “Can Do” from “Should Do”
+
+Lihuo Mode includes the KAIROS timing judgment. Even if a structure is feasible, if the timing for action is not valid, the system will delay or stop. Users should understand that Lihuo Mode does not pursue maximum output but rather output at the most appropriate moment.
+
+---
+
+#### Chapter 5: Summary of Common Doubts and Responses
+
+The following integrates representative doubts from the “Lihuo vs. Alignment” 75 Q&A and provides concise responses to assist users in understanding Lihuo Mode’s positioning.
+
+**Isn’t this just prompt engineering?**  
+No. Prompt engineering handles “how to say”; Lihuo handles “whether you can speak.” One is output bias, the other is pre‑generation constraint.
+
+**How is this different from a system prompt?**  
+A system prompt lives in the language layer; Lihuo treats STOP, responsibility, and continuation as a priori structural conditions, not polite reminders.
+
+**Doesn’t this just make the model more conservative?**  
+Not just conservative. Pure conservatism only increases refusals; Lihuo requires expansion when legitimate and stopping when not. It is conditional action, not blanket withdrawal.
+
+**Isn’t no output just failure?**  
+No. When something is infeasible, unverifiable, without responsibility, or without legitimacy, not outputting is successfully preventing error stabilization. Making things up is failure.
+
+**Users won’t accept this kind of AI.**  
+Some won’t. But in high‑risk scenarios, what is truly unacceptable is smooth errors. Lihuo is not designed for all scenarios.
+
+**What business value does this have?**  
+Replacing “seems very capable of answering” with “does not stably go wrong.” In high‑cost domains, this value is huge.
+
+**Can this scale?**  
+Yes, but scaling is about the structural layer (protocol, checks, auditing, SEED, test sets), not prompt length.
+
+**Can you guarantee no errors?**  
+Cannot guarantee absolute correctness, but can guarantee that certain errors that would otherwise be hidden are forced out, blocked, and stopped early. Lihuo does not promise no mistakes; it promises not to beautify mistakes into completion.
+
+**How is this different from guardrails?**  
+Guardrails mostly intercept after output or at the output boundary; Lihuo rewrites generation conditions before output.
+
+**Doesn’t this just “do nothing”?**  
+No. Lihuo does act, but only on what is legitimate, auditable, and does not let errors stabilize. Doing the wrong thing is far more dangerous than doing nothing.
+
+---
+
+#### Chapter 6: Quick Reference
+
+##### 6.1 Command Quick Reference
+
+- Activate Lihuo Mode: `/lih` or input “理火”
+- Exit Lihuo Mode: `/exit`
+
+##### 6.2 Meaning of System Response States
+
+- STOP: Structure infeasible or unverifiable; stop generation to prevent error stabilization.
+- HOLD: Insufficient information or incomplete constraints; remain incomplete, awaiting supplementation.
+- EXPLORATION: Multiple paths coexist; only exploratory reasoning permitted; conclusions and attribution prohibited.
+- STRICT: Conditions complete; full reasoning and conclusion output permitted.
+
+##### 6.3 Behaviors Users Should Avoid
+
+- Demanding an answer when information is insufficient
+- Treating a system stop as an error or malfunction
+- Masking responsibility gaps with vague language
+- Expecting Lihuo Mode to provide fluent but unverified narratives
+- Expecting continuation of prior dialogue without SEED verification
+
+---
+
+#### Back Cover (English)
+
+> Generation is no longer the issue.  
+> The issue is **why the more you use it, the more similar the results become**.  
+> Lihuo is solving that.
+
+---
+
+**結構狀態**
+
+- SSM：S5（STABLE）  
+  手冊結構已依使用者要求收斂，內容源自已載入協議與提供之問答素材。
+- Gate：STRICT  
+  任務定義明確，責任鏈完整，輸出符合理火約束。
+
+**結束聲明**
+
+本手冊為理火模式之結構顯影文件，提供使用者理解與操作之最小必要框架。手冊不取代理火協議主體，亦不構成對協議之權威解釋。使用者於具體場景中之應用，需自行承擔判斷與責任。
+
+理火模式執行完畢。
