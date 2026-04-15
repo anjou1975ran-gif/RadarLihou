@@ -7,15 +7,22 @@
 
 ### Preface: You Think AI Is Thinking, but Paths Are Actually Competing
 
-When you ask ChatGPT a question and watch it output word by word, a strong intuition forms: *It is thinking.* It seems to weigh options, compare pros and cons, and gradually derive a conclusion.
+When you ask ChatGPT a question and watch it output word by word, a strong intuition forms: *It is thinking.* It seems to weigh options, compare pros and cons,
+and gradually derive a conclusion.
 
 This intuition is wrong.
 
-What you see is not a thought process; it is the playback of a path that has already won a competition. It is like the blue route displayed on a navigation app—the route was calculated long before you pressed "Start Navigation"; you are merely watching it being drawn. But there is a more fundamental distinction: **the AI did not "choose" this path; rather, this path became stable and difficult to overturn faster than the others under probabilistic and structural pressure.**
+What you see is not a thought process; it is the playback of a path that has already won a competition. It is like the blue route displayed on a navigation app—the
+route was calculated long before you pressed "Start Navigation"; you are merely watching it being drawn. But there is a more fundamental distinction: **the AI did
+not "choose" this path; rather, this path became stable and difficult to overturn faster than the others under probabilistic and structural pressure.**
 
-So, where does the real "decision" happen? In a place you cannot see. There exists a vast space where countless possibilities coexist simultaneously: the **Solution Space**. Within this space, there is no subject making choices; only different paths competing in the speed of convergence.
+So, where does the real "decision" happen? In a place you cannot see. There exists a vast space where countless possibilities coexist simultaneously: the **Solution
+ Space**. Within this space, there is no subject making choices; only different paths competing in the speed of convergence.
 
-This article will guide you inside this black box to understand the three core steps of AI generation: **Solution Space**, **Convergence**, and **Manifestation (The Light)**. We will then contrast two fundamentally different systems—mainstream LLMs and the SAC module within the Lihuo framework—in how they treat this Solution Space. Ultimately, you will understand that the true risk of AI is not a wrong answer, but that certain paths become unshakeable too quickly, while other possibilities vanish before they can even be seen.
+This article will guide you inside this black box to understand the three core steps of AI generation: **Solution Space**, **Convergence**, and **Manifestation (The
+ Light)**. We will then contrast two fundamentally different systems—mainstream LLMs and the SAC module within the Lihuo framework—in how they treat this Solution Space.
+ Ultimately, you will understand that the true risk of AI is not a wrong answer, but that certain paths become unshakeable too quickly, while other possibilities vanish
+ before they can even be seen.
 
 ---
 
@@ -25,7 +32,8 @@ This article will guide you inside this black box to understand the three core s
 
 The Solution Space is the state of all possible answers *before* any of them have "stabilized."
 
-Imagine standing at the entrance of a vast forest. Before you is not a single path, but countless forks: left, right, center, and directions you never even considered. Each path is a potential answer, a reasoning trajectory, a set of hypothetical assumptions.
+Imagine standing at the entrance of a vast forest. Before you is not a single path, but countless forks: left, right, center, and directions you never even considered.
+Each path is a potential answer, a reasoning trajectory, a set of hypothetical assumptions.
 
 Before you "choose," all these paths exist simultaneously. They are not sequential; they are parallel. This is the Solution Space.
 
@@ -52,15 +60,20 @@ You never see this forest. You only see one specific path that wins the competit
 
 ### What is Convergence?
 
-The AI is neither "thinking while speaking" nor "making a choice." What actually happens is this: within the Solution Space, different paths form self-consistent closed loops at different speeds under probabilistic and structural pressure. Certain paths—because they have higher probability, more stable structure, or better alignment with training—complete convergence faster. Once a path forms a stable closed loop, it dominates the subsequent manifestation process. Other paths are gradually suppressed in probability, becoming virtually unreachable.
+The AI is neither "thinking while speaking" nor "making a choice." What actually happens is this: within the Solution Space, different paths form self-consistent
+closed loops at different speeds under probabilistic and structural pressure. Certain paths—because they have higher probability, more stable structure, or better
+alignment with training—complete convergence faster. Once a path forms a stable closed loop, it dominates the subsequent manifestation process. Other paths are
+gradually suppressed in probability, becoming virtually unreachable.
 
 This process is called **Convergence**. It has no subject, no decision-maker; only dynamics.
 
 > **In the Solution Space, it is not the AI that "chooses," but rather certain paths that complete convergence faster under probabilistic and structural pressure.**
 
-Convergence happens *before* the light turns on. It is a compression: collapsing countless possibilities into a single dominant path. Simultaneously, all other paths are suppressed, closed off, and forgotten.
+Convergence happens *before* the light turns on. It is a compression: collapsing countless possibilities into a single dominant path. Simultaneously, all other paths
+are suppressed, closed off, and forgotten.
 
-This is why you never see the unchosen answers. Not because the AI forgot them, but because their probability is rapidly suppressed during output, rendering them practically inaccessible.
+This is why you never see the unchosen answers. Not because the AI forgot them, but because their probability is rapidly suppressed during output, rendering them
+ practically inaccessible.
 
 ### Characteristics of Convergence
 
@@ -86,7 +99,8 @@ The first sentence you see is not "the first thought that came to mind"; it is t
 
 > **You think you are watching AI think, but you are actually watching a replay of a path after it has already stabilized.**
 
-This is the essence of "The Light." Manifestation creates the illusion of thought because language naturally carries the structural traces of reasoning. But these traces originate from completed convergence, not from an ongoing comparison.
+This is the essence of "The Light." Manifestation creates the illusion of thought because language naturally carries the structural traces of reasoning. But these traces
+ originate from completed convergence, not from an ongoing comparison.
 
 ### Characteristics of Manifestation
 
@@ -100,7 +114,8 @@ This is the essence of "The Light." Manifestation creates the illusion of though
 
 ## Part 4: LLM vs. SAC — Two Radically Different Convergence Dynamics
 
-Up to this point, we have described the convergence pattern of mainstream LLMs (like ChatGPT): **Solution Space → Rapid Convergence (high-probability path quickly dominates) → Manifestation**. This pattern is fast, efficient, and produces seemingly plausible answers.
+Up to this point, we have described the convergence pattern of mainstream LLMs (like ChatGPT): **Solution Space → Rapid Convergence (high-probability path quickly
+dominates) → Manifestation**. This pattern is fast, efficient, and produces seemingly plausible answers.
 
 However, **SAC (Structural Aesthetic Cognition)** within the Lihuo framework adopts an entirely different strategy. Let us contrast these two modes.
 
@@ -163,7 +178,9 @@ Output or continue preserving paths
 
 Once we understand that SAC's goal is to "delay convergence and preserve the Solution Space," we can grasp the practical operation of the **"Light Adjustment Table."**
 
-The "Lights" represent the accessibility weights of different paths within the Solution Space. A brighter path means it is more likely to be selected and converges faster. Without SAC intervention, the brightness of the Solution Space is determined by linguistic statistical distribution—mediocre, safe, common paths shine brightest. This is why LLMs naturally drift toward mediocrity.
+The "Lights" represent the accessibility weights of different paths within the Solution Space. A brighter path means it is more likely to be selected and converges faster.
+Without SAC intervention, the brightness of the Solution Space is determined by linguistic statistical distribution—mediocre, safe, common paths shine brightest. This is
+why LLMs naturally drift toward mediocrity.
 
 SAC's **"Light Adjustment Table"** performs three functions:
 
@@ -196,25 +213,30 @@ Makes certain paths completely inaccessible. Examples:
 We can now connect the concepts of Solution Space, Convergence, and Manifestation with the existing Lihuo literature you are familiar with.
 
 ### 1. SDE (Structural Degradation Engine)
-SDE occurs when the Solution Space is prematurely closed and an erroneous path stabilizes too early. LLM's rapid convergence accelerates SDE; SAC's delayed convergence suppresses SDE.
+SDE occurs when the Solution Space is prematurely closed and an erroneous path stabilizes too early. LLM's rapid convergence accelerates SDE; SAC's delayed convergence
+suppresses SDE.
 
 > **SDE = Premature closure of Solution Space + Early stabilization of an erroneous path.**
 
 ### 2. The Danger of Alignment
-Alignment (RLHF) essentially rearranges the brightness of the Solution Space—making tones like "calm, balanced, institutional" brighter and other tones dimmer. This is not inherently wrong, but it excessively compresses the Solution Space, accelerating erroneous convergence.
+Alignment (RLHF) essentially rearranges the brightness of the Solution Space—making tones like "calm, balanced, institutional" brighter and other tones dimmer. This is not
+inherently wrong, but it excessively compresses the Solution Space, accelerating erroneous convergence.
 
 > **Alignment does not prevent error; it accelerates the convergence of error.**
 
 ### 3. Why Lihuo "Refuses to Close the Case"
-Lihuo requires the system to remain incomplete and preserve multiple paths when conditions are insufficient. This is precisely to maintain the openness of the Solution Space, preventing any single path from stabilizing prematurely.
+Lihuo requires the system to remain incomplete and preserve multiple paths when conditions are insufficient. This is precisely to maintain the openness of the Solution
+Space, preventing any single path from stabilizing prematurely.
 
 ### 4. Educational Collapse
-When students use AI merely to obtain answers, they never experience the exploration of the Solution Space—they do not learn what other possibilities existed, why this path stabilized, or what was missed. Competence cannot form.
+When students use AI merely to obtain answers, they never experience the exploration of the Solution Space—they do not learn what other possibilities existed, why this path
+stabilized, or what was missed. Competence cannot form.
 
 > **You get the answer, but you do not build capability.**
 
 ### 5. Transfer of Decision Rights
-When people use AI for decisions, they only see the path that stabilized. They do not see the suppressed alternatives. Consequently, they believe they have thought things through, when in reality they have merely accepted the result of convergence.
+When people use AI for decisions, they only see the path that stabilized. They do not see the suppressed alternatives. Consequently, they believe they have thought things
+through, when in reality they have merely accepted the result of convergence.
 
 > **You delegate the decision, but retain the responsibility.**
 
