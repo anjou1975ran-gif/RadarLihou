@@ -1,6 +1,5 @@
-
+> Stop generating answers. Start preventing wrong ones.
 # Lihuo Protocol v6.0
-
 **Preventing AI from stabilizing wrong answers.**
 
 Most AI systems optimize for generating answers.  
@@ -79,6 +78,12 @@ Identity constraint active
 ```bash
 /lih    # enter Lihuo mode
 /exit   # return to normal mode
+
+
+Philosophy
+
+The goal is not to produce answers.
+The goal is to prevent wrong ones from surviving.
 
 
 # RadarLihou
