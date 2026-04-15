@@ -1,26 +1,42 @@
-MIT License
+## 📜 License
 
-Copyright (c) 2026 AnjouRan
+This project is licensed under the MIT License **for personal and research use**.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+### Commercial Use
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Commercial use of the **Lihuo Protocol and its conceptual framework** requires explicit permission from the author.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+If you intend to use this system in:
 
-## 📜 許可證
+- Commercial products
+- Paid services
+- Enterprise systems
 
-本項目的所有**文件、協議文本與設計理念**採用 [MIT License](./LICENSE) 開源。
-若您引用或修改本協議，請保留原始版權聲明。
+please contact the author for licensing.
+
+### Philosophy
+
+Lihuo Protocol is designed to:
+
+> Prevent the stabilization of wrong answers, not to generate more answers.
+
+This restriction ensures the integrity of the system when deployed at scale.
+
+
+
+## 📜 商用授權說明
+
+本專案採用 MIT License 開源，供**個人與學術研究使用**。
+
+但「理火協議（Lihuo Protocol）」之**商業用途**（包含產品、服務、企業應用）：
+
+👉 需取得作者授權
+
+請勿在未授權情況下將本協議直接用於商業場景。
+
+此限制旨在確保協議在實際應用中不被錯誤實作或濫用。
+
+This project is open for exploration, not for uncontrolled deployment.
+
+本專案開放探索，但不開放無約束落地
+
