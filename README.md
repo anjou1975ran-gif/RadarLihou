@@ -8,6 +8,15 @@ Lihuo Protocol does the opposite:
 > It prevents incorrect structures from becoming stable outputs.
 
 ---
+## 📜 License
+
+This project is licensed under **Lihuo License v1.0**.
+
+- ✅ Personal / Research use allowed
+- ❌ Commercial use requires permission
+
+See [LICENSE](./LICENSE) for details.
+
 
 ## Why this exists
 
