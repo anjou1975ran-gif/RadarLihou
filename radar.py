@@ -1,8 +1,9 @@
 def analyze(prompt):
-    # 🔥 這裡才是理火核心（先做最簡版）
-    
+    length = len(prompt)
+
     return {
-        "length": len(prompt),
-        "has_unknown": "unknown" in prompt,
-        "structure_ok": len(prompt) > 10
+        "path_valid": length > 0,
+        "constraint_ok": length > 5,
+        "paths": 2 if "or" in prompt else 1,
+        "tension": "HIGH" if "?" in prompt else "LOW"
     }
