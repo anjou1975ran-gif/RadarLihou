@@ -1,12 +1,18 @@
 from .radar import analyze
 
 def evaluate(prompt):
-    data = analyze(prompt)
+    r = analyze(prompt)
 
-    if not data["structure_ok"]:
-        return "HOLD"
-    
-    if data["has_unknown"]:
+    if not r["path_valid"]:
         return "STOP"
-    
+
+    if not r["constraint_ok"]:
+        return "HOLD"
+
+    if r["paths"] == 1:
+        return "EXPAND"
+
+    if r["tension"] == "HIGH":
+        return "DELAY"
+
     return "PASS"
